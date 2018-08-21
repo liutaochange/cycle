@@ -1,11 +1,15 @@
-import xs from 'xstream'
-
+import {html} from 'snabbdom-jsx';
 export function App (sources) {
-  const vtree$ = xs.of(
-    <div>My Awesome Cycle.js app</div>
-  )
   const sinks = {
-    DOM: vtree$
+    DOM: sources.DOM.select('input').events('click')
+    .map(ev => ev.target.checked)
+    .startWith(false)
+    .map(toggled =>
+      <div>
+        <input type="checkbox" /> Toggle me
+        <p>{toggled ? 'ON' : 'off'}</p>
+      </div>
+    )
   }
   return sinks
 }

@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "cycle-scripts": "2.1.0"
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "cycle-scripts": "2.1.0",
+    "snabbdom-jsx": "^0.4.2"
   },
   "dependencies": {
     "@cycle/dom": "18.3.0",
